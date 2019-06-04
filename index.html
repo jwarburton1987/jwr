@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, maximum-scale=1" />
-    <meta name="google-site-verification" content="HpQBeYwknyyXx_X0CYX4dliD-YDgXjajKCtCci0Duy0" />
+    <meta
+      name="google-site-verification"
+      content="HpQBeYwknyyXx_X0CYX4dliD-YDgXjajKCtCci0Duy0"
+    />
     <title>JAW Real Estate</title>
     <link rel="icon" href="img/\" type="image/png" />
     <link rel="shortcut icon" href="favicon.ico" type="img/x-icon" />
@@ -102,6 +105,53 @@
       <div class="container">
         <h2>How It Works</h2>
         <h6>See What We Offer</h6>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="text-center font-weight-bold blue-text mt-3 mb-4 pb-4">
+              <strong>Slide to see the your savings</strong>
+            </h3>
+            <hr />
+
+            <form class="range-field my-5">
+              <input
+                id="calculatorSlider"
+                class="no-border"
+                type="range"
+                value="0"
+                min="0"
+                max="30"
+              />
+            </form>
+
+            <!-- Grid row -->
+            <div class="row">
+              <!-- Grid column -->
+              <div class="col-md-6 text-center pb-5">
+                <h2>
+                  <span class="badge blue lighten-2 mb-4"
+                    >Your house price</span
+                  >
+                </h2>
+                <h2 class="display-4" style="color:#0d47a1">
+                  <strong id="resellerEarnings">$350,000</strong>
+                </h2>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 text-center pb-5">
+                <h2>
+                  <span class="badge blue lighten-2 mb-4">Client pays</span>
+                </h2>
+                <h2 class="display-4" style="color:#0d47a1">
+                  <strong id="clientPrice">319$</strong>
+                </h2>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </div>
         <div class="row">
           <div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
             <div class="service-list">
@@ -241,15 +291,28 @@
       <div class="container">
         <h2>How To Move Foward</h2>
         <h6>License to Save $.</h6>
+
         <div class="portfolioFilter">
           <ul class="Portfolio-nav wow fadeIn delay-02s">
             <li>
               <a href="#" data-filter="*" class="current">JAW Real Estate</a>
             </li>
-            <li><a href="#" data-filter=".branding">Step 1</a></li>
-            <li><a href="#" data-filter=".webdesign">Step 2</a></li>
-            <li><a href="#" data-filter=".printdesign">Step 3</a></li>
-            <li><a href="#" data-filter=".photography">Step 4</a></li>
+            <li>
+              <a href="#" data-filter=".branding"
+                >Step 1 Fill Out Contact Form</a
+              >
+            </li>
+            <li>
+              <a href="#" data-filter=".webdesign"
+                >Step 2 TALK TO A LIVE AGENT</a
+              >
+            </li>
+            <li>
+              <a href="#" data-filter=".printdesign"
+                >Step 3 HAVE A LISTING APPOINTMENT</a
+              >
+            </li>
+            <li><a href="#" data-filter=".photography">Step 4 SELL!</a></li>
           </ul>
         </div>
       </div>
@@ -273,14 +336,29 @@
           <!-- <a href="img/Portfolio-pic3.jpg"
             ><img src="img/Portfolio-pic3.jpg" alt=""
           /></a> -->
-          <iframe
+          <!-- <iframe
             width="560"
             height="315"
             src="https://www.youtube.com/embed/dyXvqHI7tAE"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-          ></iframe>
+          ></iframe> -->
+          <!-- www.123formbuilder.com script begins here --><iframe
+            allowTransparency="true"
+            style="min-height:300px; height:inherit; overflow:auto;"
+            width="100%"
+            id="contactform123"
+            name="contactform123"
+            marginwidth="0"
+            marginheight="0"
+            frameborder="0"
+            src="//www.123formbuilder.com/my-contact-form-4852914.html"
+            ><p>
+              Your browser does not support iframes. The contact form cannot be
+              displayed. Please use another contact method (phone, fax etc)
+            </p></iframe
+          ><!-- www.123formbuilder.com script ends here -->
           <h3>Uni Sans</h3>
           <p>Branding</p>
         </div>
@@ -482,9 +560,10 @@
               </li>
             </ul>
           </div>
+
           <div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
             <div class="form">
-              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <!-- <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
               <form action="" method="post" role="form" class="contactForm">
                 <div class="form-group">
@@ -538,7 +617,7 @@
                 <div class="text-center">
                   <button type="submit" class="input-btn">Send Message</button>
                 </div>
-              </form>
+              </form> --><!-- www.123formbuilder.com script begins here --><!-- www.123formbuilder.com script ends here -->
             </div>
           </div>
         </div>
@@ -653,6 +732,68 @@
           });
           return false;
         });
+      });
+
+      var slider = $("#calculatorSlider");
+      var developerBtn = $("#developerBtn");
+      var corporateBtn = $("#corporateBtn");
+      var privateBtn = $("#privateBtn");
+      var reseller = $("#resellerEarnings");
+      var client = $("#clientPrice");
+      var percentageBonus = 1; // = 1%
+      var license = {
+        corpo: {
+          active: true,
+          price: 319
+        },
+        dev: {
+          active: false,
+          price: 149
+        },
+        priv: {
+          active: false,
+          price: 79
+        }
+      };
+
+      function calculate(price, value) {
+        client.text(Math.round(price - (value / 100) * price) + "$");
+        reseller.text(
+          Math.round(((percentageBonus - value) / 100) * price) + "$"
+        );
+      }
+
+      function reset(price) {
+        slider.val(0);
+        client.text(price + "$");
+        reseller.text(Math.round((percentageBonus / 100) * price) + "$");
+      }
+      developerBtn.on("click", function(e) {
+        license.dev.active = true;
+        license.corpo.active = false;
+        license.priv.active = false;
+        reset(license.dev.price);
+      });
+      privateBtn.on("click", function(e) {
+        license.dev.active = false;
+        license.corpo.active = false;
+        license.priv.active = true;
+        reset(license.priv.price);
+      });
+      corporateBtn.on("click", function(e) {
+        license.dev.active = false;
+        license.corpo.active = true;
+        license.priv.active = false;
+        reset(license.corpo.price);
+      });
+      slider.on("input change", function(e) {
+        if (license.priv.active) {
+          calculate(license.priv.price, $(this).val());
+        } else if (license.corpo.active) {
+          calculate(license.corpo.price, $(this).val());
+        } else if (license.dev.active) {
+          calculate(license.dev.price, $(this).val());
+        }
       });
     </script>
   </body>
